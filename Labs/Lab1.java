@@ -9,7 +9,7 @@ public class Lab1 {
         Point3d myPoint1 = new Point3d(Double.parseDouble(args[0]), Double.parseDouble(args[1]), Double.parseDouble(args[2]));
         Point3d myPoint2 = new Point3d(Double.parseDouble(args[3]), Double.parseDouble(args[4]), Double.parseDouble(args[5]));
         Point3d myPoint3 = new Point3d(Double.parseDouble(args[6]), Double.parseDouble(args[7]), Double.parseDouble(args[8]));
-        if(myPoint1.comparePoint3d(myPoint2) ||myPoint1.comparePoint3d(myPoint3)||myPoint2.comparePoint3d(myPoint3)){
+        if(Point3d.comparePoint3d(myPoint1,myPoint2)   ||Point3d.comparePoint3d(myPoint1,myPoint3) ||Point3d.comparePoint3d(myPoint2,myPoint3) ){
             System.out.println("Не возможно найти площадь");
         }
         else {
@@ -27,18 +27,3 @@ public static double computerArea(Point3d myPint1,Point3d myPint2,Point3d myPint
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-//  Point3d myPoint1 = new Point3d(Double.parseDouble(args[0]), Double.parseDouble(args[1]), Double.parseDouble(args[2]));
-//    Point3d myPoint2 = new Point3d(Double.parseDouble(args[3]), Double.parseDouble(args[4]), Double.parseDouble(args[5]));
-//  Point3d myPoint3 = new Point3d(Double.parseDouble(args[6]), Double.parseDouble(args[7]), Double.parseDouble(args[8]));

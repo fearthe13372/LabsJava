@@ -51,13 +51,15 @@ public class module_2 {
         return (middle%2)==0;
     }
     //Вывод значений массива сложенных с самим собой и предыдущими элементами
-    public static void cumulativeSum(int [] mas){
+    public static void cumulativeSum(int [] array){
         int sum=0;
-        for (int i = 0; i < mas.length; i++) {
-            sum+=mas[i];
-            mas[i]=sum;
-            System.out.print(mas[i]+" ");
+        int[] array1 = new int[array.length];
+        for(int i = 0; i < array.length; i++) {
+            for(int j = 0; j <= i; j++)
+                array1[i] += array[j];
+            System.out.println(array1[i]+" ");
         }
+
     }
     // Сколько десятичных знаков
     public static  int getDecimalPlaces(String s){
@@ -75,6 +77,13 @@ public class module_2 {
     }
     //Проверка почтовых индексов
     public static boolean isValid(String s){
+        for (int i = 0; i < s.length(); i++) {
+            char a=s.charAt(i);
+            int a1=(int)a;
+            if(a1<48 && a1>57){
+            return false;
+            }
+        }
         if(s.length()<=5){
             if(s.indexOf(" ")==-1){
             return true;
@@ -85,8 +94,8 @@ public class module_2 {
     }
     //Пара строк по определ условиям
     public static boolean isStrangePair(String s,String s2){
-
-        if(s.indexOf(0)==s2.indexOf(s2.length()-1)){
+        if(s.isEmpty()){return false;}
+        else if(s.indexOf(0)==s2.indexOf(s2.length()-1)){
             if(s2.indexOf(0)==s.indexOf(s2.length()-1)){
                 return true;
             }
